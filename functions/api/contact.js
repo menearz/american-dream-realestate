@@ -1,14 +1,15 @@
 // Cloudflare Pages Function — handles POST /api/contact
 //
 // REQUIRED ENVIRONMENT VARIABLES (set in Cloudflare Pages dashboard:
-//   Settings → Environment variables → Production):
+//   Settings → Environment variables → Production). Names are case-sensitive
+//   — these match the lowercase variables already set in the dashboard:
 //
-//   RESEND_API_KEY     Your Resend API key, format "re_xxx..."
-//   CONTACT_TO_EMAIL   Where submissions should land (e.g. "you@yourdomain.com")
-//   CONTACT_FROM_EMAIL Verified Resend sender (e.g. "site@americandreamrealestate.com")
+//   resend_api_key     Your Resend API key, format "re_xxx..."
+//   contact_to_email   Where submissions should land (e.g. "you@yourdomain.com")
+//   contact_from_email Verified Resend sender (e.g. "site@americandreamrealestate.com")
 //
-// FOR INITIAL TESTING you can set CONTACT_FROM_EMAIL to "onboarding@resend.dev"
-// (Resend's sandbox sender) and CONTACT_TO_EMAIL to the address registered with
+// FOR INITIAL TESTING you can set contact_from_email to "onboarding@resend.dev"
+// (Resend's sandbox sender) and contact_to_email to the address registered with
 // your Resend account. Production needs a verified domain.
 
 const REDIRECT = (url, request) =>
@@ -37,7 +38,7 @@ export async function onRequestPost({ request, env }) {
     return REDIRECT('/contact.html?error=missing', request);
   }
 
-  if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL || !env.CONTACT_FROM_EMAIL) {
+  if (!env.resend_api_key || !env.contact_to_email || !env.contact_from_email) {
     return REDIRECT('/contact.html?error=config', request);
   }
 
@@ -60,12 +61,12 @@ export async function onRequestPost({ request, env }) {
   const resendResponse = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${env.resend_api_key}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: `American Dream Real Estate <${env.CONTACT_FROM_EMAIL}>`,
-      to: [env.CONTACT_TO_EMAIL],
+      from: `American Dream Real Estate <${env.contact_from_email}>`,
+      to: [env.contact_to_email],
       reply_to: email,
       subject: `New contact from ${name}`,
       html,
