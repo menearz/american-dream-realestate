@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Flag Hero — American Dream Real Estate</title>
+
+  <!-- =========================================================
+       This demo file is intentionally SELF-CONTAINED. All CSS
+       and SVGs are inline so it works no matter where you save
+       it on your computer. In your real project, the styles will
+       be split across /styles/typography.css, /styles/brand.css,
+       and /styles/animations.css.
+       ========================================================= -->
+
+  <style>
+    /* ---- Google Fonts ---- */
+    @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600&display=swap');
+
+    /* ---- Design tokens ---- */
+    :root {
+      --color-flag-red: #B22234;
+      --color-flag-navy: #3C3B6E;
+      --color-pure-white: #FFFFFF;
+      --color-parchment: #F5F1E8;
+      --color-parchment-deep: #ECE6D5;
+      --color-stone: #A8A29A;
+      --color-slate: #4A4A4A;
+      --color-charcoal: #1A1A1A;
+      --color-gold: #C9A961;
+
+      --font-display: 'IM Fell English', Georgia, 'Times New Roman', serif;
+      --font-body: 'EB Garamond', Garamond, Georgia, serif;
+      --font-ui: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+      --space-2: 0.5rem;
+      --space-3: 1rem;
+      --space-4: 1.5rem;
+      --space-5: 2rem;
+      --space-7: 4rem;
+      --space-8: 6rem;
+
+      --container-max: 1200px;
+      --container-narrow: 760px;
+    }
+
+    /* ---- Base ---- */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--color-parchment);
+      color: var(--color-slate);
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ---- Typography ---- */
+    .display, h1.display {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--color-flag-navy);
+      margin: 0 0 var(--space-4);
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--color-flag-navy);
+      margin: 0 0 var(--space-3);
+    }
+    p { margin: 0 0 var(--space-3); }
+    .eyebrow {
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-flag-red);
+      margin: 0 0 var(--space-2);
+    }
+    .lede { font-size: 1.25rem; }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.875rem 1.75rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 150ms, color 150ms, border-color 150ms;
+    }
+    .btn-accent {
+      background: var(--color-flag-red);
+      color: white;
+      border-color: var(--color-flag-red);
+    }
+    .btn-accent:hover { background: #951C2C; border-color: #951C2C; }
+    .btn-ghost {
+      background: rgba(255,255,255,0.10);
+      color: white;
+      border-color: rgba(255,255,255,0.7);
+      backdrop-filter: blur(2px);
+    }
+    .btn-ghost:hover { background: white; color: var(--color-flag-navy); }
+
+    /* ---- Layout ---- */
+    .container-narrow {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+    .demo-info { padding: var(--space-7) 0; text-align: center; }
+    code {
+      background: var(--color-parchment-deep);
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+    .divider-flag {
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        var(--color-flag-red) 0% 33.33%,
+        var(--color-pure-white) 33.33% 66.66%,
+        var(--color-flag-navy) 66.66% 100%
+      );
+      border: none;
+      margin: var(--space-5) 0;
+    }
+
+    /* ====================================================================
+       FLAG-WAVING HERO — the signature animated background
+       ==================================================================== */
+
+    .ad-flag-hero {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      min-height: 70vh;
+      color: white;
+      /* Sky background — atmospheric blue, like the wallpaper */
+      background: linear-gradient(180deg, #6B89A8 0%, #5478A0 45%, #44688E 100%);
+    }
+
+    /* Layer 1: the 13 stripes (covers entire hero) */
+    .ad-flag-hero__flag {
+      position: absolute;
+      inset: -2%;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        #B22234 0%,        #B22234 7.692%,
+        #FFFFFF 7.692%,    #FFFFFF 15.384%,
+        #B22234 15.384%,   #B22234 23.076%,
+        #FFFFFF 23.076%,   #FFFFFF 30.769%,
+        #B22234 30.769%,   #B22234 38.461%,
+        #FFFFFF 38.461%,   #FFFFFF 46.153%,
+        #B22234 46.153%,   #B22234 53.846%,
+        #FFFFFF 53.846%,   #FFFFFF 61.538%,
+        #B22234 61.538%,   #B22234 69.230%,
+        #FFFFFF 69.230%,   #FFFFFF 76.923%,
+        #B22234 76.923%,   #B22234 84.615%,
+        #FFFFFF 84.615%,   #FFFFFF 92.307%,
+        #B22234 92.307%,   #B22234 100%
+      );
+      opacity: 0.94;
+      animation: ad-flag-wave 14s ease-in-out infinite;
+      transform-origin: 0% 50%;
+      will-change: transform;
+    }
+
+    /* Layer 2: canton (navy with stars, upper-left) */
+    .ad-flag-hero__canton {
+      position: absolute;
+      top: -2%;
+      left: -2%;
+      width: 40%;
+      height: 53.846%;
+      z-index: 2;
+      background: var(--color-flag-navy);
+      animation: ad-flag-wave 14s ease-in-out infinite;
+      transform-origin: 0% 50%;
+      will-change: transform;
+    }
+    .ad-flag-hero__canton svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    @keyframes ad-flag-wave {
+      0%, 100% { transform: skewY(-1.5deg) scaleY(1); }
+      25%      { transform: skewY( 0.5deg) scaleY(1.015); }
+      50%      { transform: skewY( 1.5deg) scaleY(0.985); }
+      75%      { transform: skewY(-0.5deg) scaleY(1.005); }
+    }
+
+    /* Layer 3: drifting fabric ripple — the wind effect */
+    .ad-flag-hero__ripple {
+      position: absolute;
+      inset: -10%;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          100deg,
+          transparent 0,
+          transparent 90px,
+          rgba(0, 0, 0, 0.18) 130px,
+          transparent 170px,
+          transparent 260px,
+          rgba(255, 255, 255, 0.14) 300px,
+          transparent 340px,
+          transparent 440px
+        );
+      background-size: 440px 100%;
+      mix-blend-mode: multiply;
+      animation: ad-flag-ripple 9s linear infinite;
+      will-change: background-position;
+    }
+    @keyframes ad-flag-ripple {
+      from { background-position: 0 0; }
+      to   { background-position: 440px 0; }
+    }
+
+    /* Layer 4: vignette for content readability */
+    .ad-flag-hero__vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(20, 25, 40, 0.55) 0%,
+          rgba(20, 25, 40, 0.25) 35%,
+          transparent 65%
+        ),
+        radial-gradient(
+          ellipse 100% 100% at 50% 50%,
+          transparent 40%,
+          rgba(20, 25, 40, 0.25) 80%,
+          rgba(20, 25, 40, 0.45) 100%
+        );
+    }
+
+    /* Layer 5: content */
+    .ad-flag-hero__content {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4);
+    }
+    .ad-flag-hero__content h1,
+    .ad-flag-hero__content .display {
+      color: white;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+    }
+    .ad-flag-hero__content .lede,
+    .ad-flag-hero__content p {
+      color: rgba(255, 255, 255, 0.96);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+    }
+    .ad-flag-hero__content .eyebrow {
+      color: rgba(255, 255, 255, 0.88);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .ad-flag-hero__flag,
+      .ad-flag-hero__canton,
+      .ad-flag-hero__ripple { animation: none !important; }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .ad-flag-hero { min-height: 65vh; }
+      .ad-flag-hero__content { padding: var(--space-7) var(--space-3); }
+      .display, h1.display { font-size: 2.5rem; }
+      h2 { font-size: 1.75rem; }
+    }
+
+    /* Fade-in micro-animation for hero text */
+    .ad-fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: ad-fade-up 400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .ad-fade-up--1 { animation-delay: 100ms; }
+    .ad-fade-up--2 { animation-delay: 250ms; }
+    .ad-fade-up--3 { animation-delay: 400ms; }
+    .ad-fade-up--4 { animation-delay: 550ms; }
+    @keyframes ad-fade-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       The waving-flag hero
+       ============================================================ -->
+  <section class="ad-flag-hero">
+
+    <!-- Stripes -->
+    <div class="ad-flag-hero__flag"></div>
+
+    <!-- Canton with 50 stars in 9 alternating rows -->
+    <div class="ad-flag-hero__canton">
+      <svg viewBox="0 0 60 32" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <symbol id="adstar" viewBox="-1 -1 2 2">
+            <polygon points="0,-1 0.225,-0.309 0.951,-0.309 0.363,0.118 0.588,0.809 0,0.382 -0.588,0.809 -0.363,0.118 -0.951,-0.309 -0.225,-0.309" fill="#FFFFFF"/>
+          </symbol>
+        </defs>
+        <!-- Row 1 (6 stars) -->
+        <use href="#adstar" x="3.6"  y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="1.8" width="2.8" height="2.8"/>
+        <!-- Row 2 (5 stars, offset) -->
+        <use href="#adstar" x="8.6"  y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="5.0" width="2.8" height="2.8"/>
+        <!-- Row 3 (6 stars) -->
+        <use href="#adstar" x="3.6"  y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="8.2" width="2.8" height="2.8"/>
+        <!-- Row 4 (5 stars, offset) -->
+        <use href="#adstar" x="8.6"  y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="11.4" width="2.8" height="2.8"/>
+        <!-- Row 5 (6 stars) -->
+        <use href="#adstar" x="3.6"  y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="14.6" width="2.8" height="2.8"/>
+        <!-- Row 6 (5 stars, offset) -->
+        <use href="#adstar" x="8.6"  y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="17.8" width="2.8" height="2.8"/>
+        <!-- Row 7 (6 stars) -->
+        <use href="#adstar" x="3.6"  y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="21.0" width="2.8" height="2.8"/>
+        <!-- Row 8 (5 stars, offset) -->
+        <use href="#adstar" x="8.6"  y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="24.2" width="2.8" height="2.8"/>
+        <!-- Row 9 (6 stars) -->
+        <use href="#adstar" x="3.6"  y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="27.4" width="2.8" height="2.8"/>
+      </svg>
+    </div>
+
+    <!-- Wind ripple -->
+    <div class="ad-flag-hero__ripple"></div>
+
+    <!-- Vignette for text contrast -->
+    <div class="ad-flag-hero__vignette"></div>
+
+    <!-- Content -->
+    <div class="ad-flag-hero__content">
+      <p class="eyebrow ad-fade-up ad-fade-up--1">
+        American Dream Real Estate · Established in Texas
+      </p>
+
+      <h1 class="display ad-fade-up ad-fade-up--2">
+        Life, Liberty,<br>and the pursuit of home.
+      </h1>
+
+      <p class="lede ad-fade-up ad-fade-up--3" style="max-width: 600px; margin-bottom: var(--space-5);">
+        Properties across Houston and the greater Texas Gulf Coast.
+        Listed with care. Closed with confidence.
+      </p>
+
+      <div class="ad-fade-up ad-fade-up--4">
+        <a href="#" class="btn btn-accent" style="margin-right: var(--space-2);">Find a home</a>
+        <a href="#" class="btn btn-ghost">List a property</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Demo notes
+       ============================================================ -->
+  <section class="demo-info">
+    <div class="container-narrow">
+      <p class="eyebrow">Demo notes</p>
+      <h2>Slowly waving flag, just like the wallpaper.</h2>
+      <p>
+        13 stripes fill the hero. The canton with 50 stars sits anchored upper-left.
+        Diagonal shadow ripples drift across to suggest fabric folds catching the wind.
+        The whole flag billows on a 14-second cycle, hinged at the left like a flagpole.
+        Pure CSS — no images, no JavaScript — and it pauses gracefully for users with
+        <code>prefers-reduced-motion</code> set.
+      </p>
+      <p>
+        To use it on any page, give a <code>&lt;section&gt;</code> the class
+        <code>ad-flag-hero</code>, and include the four child layers:
+        <code>.ad-flag-hero__flag</code>, <code>.ad-flag-hero__canton</code> (with
+        the 50-star SVG inside), <code>.ad-flag-hero__ripple</code>, and
+        <code>.ad-flag-hero__vignette</code>, then your content wrapper
+        <code>.ad-flag-hero__content</code>.
+      </p>
+      <hr class="divider-flag">
+      <p style="font-family: var(--font-display); font-size: 1.5rem; color: var(--color-flag-navy); margin: 0;">
+        Watch the flag wave. Wait for the ripples to roll across.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>

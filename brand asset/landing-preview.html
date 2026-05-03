@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Dream Real Estate LLC — Houston, Texas</title>
+  <meta name="description" content="Real estate across Houston and the Texas Gulf Coast. Honest. Earned. American.">
+
+  <!-- =========================================================
+       Self-contained reference homepage. All CSS and SVGs are
+       inline so it previews from anywhere. Your real project will
+       split styles into /styles/*.css and load logos from /assets/.
+       ========================================================= -->
+
+  <style>
+    /* ---- Google Fonts ---- */
+    @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
+    /* ---- Design tokens ---- */
+    :root {
+      --color-flag-red: #B22234;
+      --color-flag-navy: #3C3B6E;
+      --color-pure-white: #FFFFFF;
+      --color-parchment: #F5F1E8;
+      --color-parchment-deep: #ECE6D5;
+      --color-stone: #A8A29A;
+      --color-slate: #4A4A4A;
+      --color-charcoal: #1A1A1A;
+      --color-gold: #C9A961;
+
+      --font-display: 'IM Fell English', Georgia, 'Times New Roman', serif;
+      --font-body: 'EB Garamond', Garamond, Georgia, serif;
+      --font-ui: 'Libre Franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 1rem;
+      --space-4: 1.5rem;
+      --space-5: 2rem;
+      --space-6: 3rem;
+      --space-7: 4rem;
+      --space-8: 6rem;
+
+      --container-max: 1200px;
+      --container-narrow: 760px;
+      --radius-md: 4px;
+      --shadow-card: 0 2px 8px rgba(60, 59, 110, 0.08);
+      --shadow-card-hover: 0 8px 24px rgba(60, 59, 110, 0.12);
+    }
+
+    /* ---- Base ---- */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--color-parchment);
+      color: var(--color-slate);
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+    .container-narrow {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+    .section { padding: var(--space-8) 0; }
+    @media (max-width: 768px) { .section { padding: var(--space-7) 0; } }
+
+    /* ---- Typography ---- */
+    .display, h1.display {
+      font-family: var(--font-display);
+      font-size: 4rem; font-weight: 400; line-height: 1.15;
+      letter-spacing: -0.01em; color: var(--color-flag-navy);
+      margin: 0 0 var(--space-4);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 3rem; font-weight: 400; line-height: 1.15;
+      letter-spacing: -0.01em; color: var(--color-flag-navy);
+      margin: 0 0 var(--space-4);
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: 2.25rem; font-weight: 400; line-height: 1.35;
+      letter-spacing: -0.01em; color: var(--color-flag-navy);
+      margin: 0 0 var(--space-3);
+    }
+    h3 {
+      font-family: var(--font-body);
+      font-size: 1.5rem; font-weight: 600; line-height: 1.35;
+      color: var(--color-charcoal);
+      margin: 0 0 var(--space-3);
+    }
+    p { margin: 0 0 var(--space-3); }
+    .eyebrow {
+      font-family: var(--font-ui);
+      font-size: 0.875rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-flag-red);
+      margin: 0 0 var(--space-2);
+    }
+    .lede { font-size: 1.25rem; line-height: 1.65; }
+    .pullquote {
+      font-family: var(--font-display);
+      font-size: 1.75rem; line-height: 1.35;
+      color: var(--color-flag-navy);
+      border-left: 3px solid var(--color-flag-red);
+      padding-left: var(--space-4);
+      margin: var(--space-5) 0;
+    }
+    a {
+      color: var(--color-flag-navy);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 150ms, border-color 150ms;
+    }
+    a:hover { color: var(--color-flag-red); border-bottom-color: currentColor; }
+
+    .text-center { text-align: center; }
+    .divider-flag {
+      height: 4px;
+      background: linear-gradient(
+        to right,
+        var(--color-flag-red) 0% 33.33%,
+        var(--color-pure-white) 33.33% 66.66%,
+        var(--color-flag-navy) 66.66% 100%
+      );
+      border: none;
+      margin: var(--space-5) 0;
+    }
+
+    @media (max-width: 768px) {
+      .display, h1.display { font-size: 2.5rem; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      h3 { font-size: 1.25rem; }
+      body { font-size: 1rem; }
+    }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.9375rem; font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      cursor: pointer; text-decoration: none;
+      transition: background-color 150ms, color 150ms, border-color 150ms;
+    }
+    .btn-primary {
+      background: var(--color-flag-navy);
+      color: white; border-color: var(--color-flag-navy);
+    }
+    .btn-primary:hover { background: var(--color-charcoal); border-color: var(--color-charcoal); }
+    .btn-accent {
+      background: var(--color-flag-red);
+      color: white; border-color: var(--color-flag-red);
+    }
+    .btn-accent:hover { background: #951C2C; border-color: #951C2C; }
+    .btn-ghost {
+      background: rgba(255,255,255,0.10);
+      color: white;
+      border-color: rgba(255,255,255,0.7);
+    }
+    .btn-ghost:hover { background: white; color: var(--color-flag-navy); }
+
+    /* ---- Cards ---- */
+    .card {
+      background: white;
+      border-top: 4px solid var(--color-flag-navy);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-card);
+      transition: box-shadow 250ms, transform 250ms;
+    }
+    .card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, var(--color-parchment-deep), var(--color-stone));
+      border-radius: 2px;
+      margin-bottom: var(--space-3);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-stone);
+      font-family: var(--font-ui); font-size: 0.875rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .card-meta {
+      font-family: var(--font-ui); font-size: 0.875rem;
+      color: var(--color-stone);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin: 0 0 var(--space-2);
+    }
+    .card-address {
+      font-family: var(--font-display);
+      font-size: 1.5rem; line-height: 1.35;
+      color: var(--color-charcoal);
+      margin: 0 0 var(--space-2);
+    }
+    .card-price {
+      font-family: var(--font-ui);
+      font-size: 1.125rem; font-weight: 600;
+      color: var(--color-flag-navy);
+      letter-spacing: 0.04em;
+      margin: 0 0 var(--space-3);
+    }
+
+    /* ---- Forms ---- */
+    label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.875rem; font-weight: 500;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-1);
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      color: var(--color-charcoal);
+      background: white;
+      border: 1px solid var(--color-stone);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--color-flag-navy);
+      box-shadow: 0 0 0 2px rgba(60, 59, 110, 0.2);
+    }
+
+    /* ---- Navbar ---- */
+    .site-nav {
+      position: absolute; top: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: var(--space-3) var(--space-4);
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: var(--container-max); margin: 0 auto;
+    }
+    .site-nav__logo {
+      display: inline-block;
+      border-bottom: none;
+    }
+    .site-nav__logo svg { height: 56px; width: auto; }
+    .site-nav__logo:hover { border-bottom: none; }
+    .site-nav__links {
+      display: flex; gap: var(--space-5);
+      list-style: none; margin: 0; padding: 0;
+    }
+    .site-nav__links a {
+      font-family: var(--font-ui);
+      font-size: 0.9375rem; font-weight: 500;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.92);
+      border-bottom: none;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+    .site-nav__links a:hover { color: white; border-bottom: 1px solid white; }
+    @media (max-width: 768px) {
+      .site-nav__links { display: none; }
+      .site-nav__logo svg { height: 44px; }
+    }
+
+    /* ---- Listings grid ---- */
+    .listings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+
+    /* ---- Two-column ---- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-7);
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; gap: var(--space-5); }
+    }
+
+    /* ---- Footer ---- */
+    .site-footer {
+      background: var(--color-charcoal);
+      color: rgba(255, 255, 255, 0.75);
+      padding: var(--space-7) 0 var(--space-5);
+      text-align: center;
+    }
+    .site-footer .footer-logo {
+      display: flex; justify-content: center;
+      margin: 0 auto var(--space-4);
+    }
+    .site-footer .footer-logo svg { height: 180px; width: auto; }
+    .site-footer .footer-links {
+      list-style: none; padding: 0;
+      margin: var(--space-4) 0;
+      display: flex; gap: var(--space-4);
+      justify-content: center; flex-wrap: wrap;
+    }
+    .site-footer a {
+      color: rgba(255, 255, 255, 0.85);
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .site-footer a:hover { color: white; border-bottom-color: white; }
+    .site-footer .copyright {
+      font-family: var(--font-body); font-style: italic;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: var(--space-4);
+    }
+
+    /* ====================================================================
+       FLAG-WAVING HERO
+       ==================================================================== */
+
+    .ad-flag-hero {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      min-height: 75vh;
+      color: white;
+      background: linear-gradient(180deg, #6B89A8 0%, #5478A0 45%, #44688E 100%);
+    }
+    .ad-flag-hero__flag {
+      position: absolute;
+      inset: -2%;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        #B22234 0%,        #B22234 7.692%,
+        #FFFFFF 7.692%,    #FFFFFF 15.384%,
+        #B22234 15.384%,   #B22234 23.076%,
+        #FFFFFF 23.076%,   #FFFFFF 30.769%,
+        #B22234 30.769%,   #B22234 38.461%,
+        #FFFFFF 38.461%,   #FFFFFF 46.153%,
+        #B22234 46.153%,   #B22234 53.846%,
+        #FFFFFF 53.846%,   #FFFFFF 61.538%,
+        #B22234 61.538%,   #B22234 69.230%,
+        #FFFFFF 69.230%,   #FFFFFF 76.923%,
+        #B22234 76.923%,   #B22234 84.615%,
+        #FFFFFF 84.615%,   #FFFFFF 92.307%,
+        #B22234 92.307%,   #B22234 100%
+      );
+      opacity: 0.94;
+      animation: ad-flag-wave 14s ease-in-out infinite;
+      transform-origin: 0% 50%;
+      will-change: transform;
+    }
+    .ad-flag-hero__canton {
+      position: absolute;
+      top: -2%; left: -2%;
+      width: 40%; height: 53.846%;
+      z-index: 2;
+      background: var(--color-flag-navy);
+      animation: ad-flag-wave 14s ease-in-out infinite;
+      transform-origin: 0% 50%;
+      will-change: transform;
+    }
+    .ad-flag-hero__canton svg {
+      width: 100%; height: 100%; display: block;
+    }
+    @keyframes ad-flag-wave {
+      0%, 100% { transform: skewY(-1.5deg) scaleY(1); }
+      25%      { transform: skewY( 0.5deg) scaleY(1.015); }
+      50%      { transform: skewY( 1.5deg) scaleY(0.985); }
+      75%      { transform: skewY(-0.5deg) scaleY(1.005); }
+    }
+    .ad-flag-hero__ripple {
+      position: absolute; inset: -10%;
+      z-index: 3; pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          100deg,
+          transparent 0, transparent 90px,
+          rgba(0, 0, 0, 0.18) 130px,
+          transparent 170px, transparent 260px,
+          rgba(255, 255, 255, 0.14) 300px,
+          transparent 340px, transparent 440px
+        );
+      background-size: 440px 100%;
+      mix-blend-mode: multiply;
+      animation: ad-flag-ripple 9s linear infinite;
+    }
+    @keyframes ad-flag-ripple {
+      from { background-position: 0 0; }
+      to   { background-position: 440px 0; }
+    }
+    .ad-flag-hero__vignette {
+      position: absolute; inset: 0;
+      z-index: 4; pointer-events: none;
+      background:
+        linear-gradient(90deg,
+          rgba(20, 25, 40, 0.55) 0%,
+          rgba(20, 25, 40, 0.25) 35%,
+          transparent 65%
+        ),
+        radial-gradient(ellipse 100% 100% at 50% 50%,
+          transparent 40%,
+          rgba(20, 25, 40, 0.25) 80%,
+          rgba(20, 25, 40, 0.45) 100%
+        );
+    }
+    .ad-flag-hero__content {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4);
+    }
+    .ad-flag-hero__content h1,
+    .ad-flag-hero__content .display {
+      color: white;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+    }
+    .ad-flag-hero__content .lede,
+    .ad-flag-hero__content p {
+      color: rgba(255, 255, 255, 0.96);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+    }
+    .ad-flag-hero__content .eyebrow {
+      color: rgba(255, 255, 255, 0.88);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ad-flag-hero__flag,
+      .ad-flag-hero__canton,
+      .ad-flag-hero__ripple { animation: none !important; }
+    }
+    @media (max-width: 768px) {
+      .ad-flag-hero { min-height: 65vh; }
+      .ad-flag-hero__content { padding: var(--space-7) var(--space-3); }
+    }
+
+    /* Fade-in micro-animation */
+    .ad-fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: ad-fade-up 400ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .ad-fade-up--1 { animation-delay: 100ms; }
+    .ad-fade-up--2 { animation-delay: 250ms; }
+    .ad-fade-up--3 { animation-delay: 400ms; }
+    .ad-fade-up--4 { animation-delay: 550ms; }
+    @keyframes ad-fade-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION (sits over the hero)
+       ============================================================ -->
+  <nav class="site-nav">
+    <a href="/" class="site-nav__logo" aria-label="American Dream Real Estate, home">
+      <!-- Inline horizontal star+house logo, white version for dark hero -->
+      <svg viewBox="0 0 660 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Dream Real Estate LLC">
+        <!-- Mark on the left -->
+        <g transform="translate(-15, -25) scale(0.875)">
+          <!-- Star -->
+          <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7"
+                   fill="#FFFFFF"/>
+          <!-- House silhouette with door + windows cut out (even-odd) -->
+          <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z
+                   M 110,195 L 110,168 L 130,168 L 130,195 Z
+                   M 86,158 L 86,176 L 102,176 L 102,158 Z
+                   M 138,158 L 138,176 L 154,176 L 154,158 Z"
+                fill="#FFFFFF" fill-rule="evenodd"/>
+          <!-- Three red flag stripes inside the gable -->
+          <g fill="#B22234">
+            <rect x="108" y="124" width="24" height="2.8"/>
+            <rect x="106" y="130" width="28" height="2.8"/>
+            <rect x="104" y="136" width="32" height="2.8"/>
+          </g>
+        </g>
+        <!-- Vertical separator -->
+        <line x1="200" y1="35" x2="200" y2="145" stroke="rgba(255,255,255,0.45)" stroke-width="0.75"/>
+        <!-- Wordmark -->
+        <text x="220" y="78" font-family="'IM Fell English', Georgia, 'Times New Roman', serif" font-size="36" font-weight="400" fill="#FFFFFF" letter-spacing="1.8">AMERICAN DREAM</text>
+        <!-- Stripe divider -->
+        <g transform="translate(220, 92)">
+          <rect x="0" y="0" width="60" height="2.5" fill="#B22234"/>
+          <rect x="60" y="0" width="60" height="2.5" fill="#FFFFFF" stroke="rgba(255,255,255,0.4)" stroke-width="0.4"/>
+          <rect x="120" y="0" width="60" height="2.5" fill="rgba(255,255,255,0.6)"/>
+        </g>
+        <text x="220" y="120" font-family="'Libre Franklin', sans-serif" font-size="13" font-weight="500" fill="#FFFFFF" letter-spacing="5.5">REAL ESTATE LLC</text>
+        <text x="220" y="142" font-family="'EB Garamond', Garamond, Georgia, serif" font-size="13" font-style="italic" fill="rgba(255,255,255,0.85)">Life · Liberty · The Pursuit of Home</text>
+      </svg>
+    </a>
+    <ul class="site-nav__links">
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       HERO with waving flag
+       ============================================================ -->
+  <section class="ad-flag-hero">
+    <div class="ad-flag-hero__flag"></div>
+
+    <div class="ad-flag-hero__canton">
+      <svg viewBox="0 0 60 32" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <symbol id="adstar" viewBox="-1 -1 2 2">
+            <polygon points="0,-1 0.225,-0.309 0.951,-0.309 0.363,0.118 0.588,0.809 0,0.382 -0.588,0.809 -0.363,0.118 -0.951,-0.309 -0.225,-0.309" fill="#FFFFFF"/>
+          </symbol>
+        </defs>
+        <use href="#adstar" x="3.6"  y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="1.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="8.6"  y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="5.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="3.6"  y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="8.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="8.6"  y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="11.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="3.6"  y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="14.6" width="2.8" height="2.8"/>
+        <use href="#adstar" x="8.6"  y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="17.8" width="2.8" height="2.8"/>
+        <use href="#adstar" x="3.6"  y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="21.0" width="2.8" height="2.8"/>
+        <use href="#adstar" x="8.6"  y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="18.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="28.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="38.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="48.6" y="24.2" width="2.8" height="2.8"/>
+        <use href="#adstar" x="3.6"  y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="13.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="23.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="33.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="43.6" y="27.4" width="2.8" height="2.8"/>
+        <use href="#adstar" x="53.6" y="27.4" width="2.8" height="2.8"/>
+      </svg>
+    </div>
+
+    <div class="ad-flag-hero__ripple"></div>
+    <div class="ad-flag-hero__vignette"></div>
+
+    <div class="ad-flag-hero__content">
+      <p class="eyebrow ad-fade-up ad-fade-up--1">
+        Houston · Greater Texas Gulf Coast
+      </p>
+      <h1 class="display ad-fade-up ad-fade-up--2">
+        Life, Liberty,<br>and the pursuit of home.
+      </h1>
+      <p class="lede ad-fade-up ad-fade-up--3" style="max-width: 620px; margin-bottom: var(--space-5);">
+        We list properties with care, write listings that read like the truth, and close deals
+        the way they ought to be closed.
+      </p>
+      <div class="ad-fade-up ad-fade-up--4">
+        <a href="#listings" class="btn btn-accent" style="margin-right: var(--space-2);">Find a home</a>
+        <a href="#contact" class="btn btn-ghost">Talk to us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LISTINGS
+       ============================================================ -->
+  <section class="section" id="listings">
+    <div class="container">
+      <p class="eyebrow text-center">Currently for sale</p>
+      <h2 class="text-center">Featured properties</h2>
+
+      <div class="listings-grid">
+        <article class="card">
+          <div class="card-image">[ Property photo ]</div>
+          <p class="card-meta">Humble · 4 bd · 3 ba</p>
+          <h3 class="card-address">1872 Timber Forest Drive</h3>
+          <p class="card-price">$489,000</p>
+          <p>A brick-front family home on a quiet cul-de-sac. Mature oaks. New roof.</p>
+        </article>
+        <article class="card">
+          <div class="card-image">[ Property photo ]</div>
+          <p class="card-meta">Kingwood · 5 bd · 4 ba</p>
+          <h3 class="card-address">3021 Magnolia Bend</h3>
+          <p class="card-price">$725,000</p>
+          <p>Two-story Federal with wraparound porch. Walk to the river park.</p>
+        </article>
+        <article class="card">
+          <div class="card-image">[ Property photo ]</div>
+          <p class="card-meta">Atascocita · 3 bd · 2 ba</p>
+          <h3 class="card-address">14506 Lakeshore Bluff</h3>
+          <p class="card-price">$362,500</p>
+          <p>Single-story ranch on the lake. Updated kitchen. Move-in ready.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><hr class="divider-flag"></div>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">About the firm</p>
+          <h2>Built on what built this country.</h2>
+          <p>
+            American Dream Real Estate is a Texas-based brokerage founded on the
+            belief that owning a home is still the most reliable way to build a life.
+            We work with first-time buyers, growing families, and investors who'd
+            rather work with a person than a portal.
+          </p>
+          <p>
+            Our listings are written carefully. Our advice is given honestly. Our
+            paperwork is filed when we say it will be filed.
+          </p>
+          <p>
+            <a href="#contact" class="btn btn-primary">Schedule a conversation</a>
+          </p>
+        </div>
+        <blockquote class="pullquote">
+          "A house is the start.<br>A home is the goal."
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section class="section" id="contact" style="background: white;">
+    <div class="container-narrow">
+      <p class="eyebrow text-center">Get in touch</p>
+      <h2 class="text-center">Tell us what you're looking for.</h2>
+      <p class="text-center" style="margin-bottom: var(--space-5);">
+        We'll write back the same day, in plain English, no auto-responder.
+      </p>
+
+      <form action="#" method="post" novalidate>
+        <div style="margin-bottom: var(--space-4);">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div style="margin-bottom: var(--space-4);">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div style="margin-bottom: var(--space-4);">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div style="margin-bottom: var(--space-5);">
+          <label for="message">What you're looking for</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-logo">
+        <!-- Inline monochrome star+house logo, white version for dark footer -->
+        <svg viewBox="0 0 500 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Dream Real Estate LLC" color="#FFFFFF">
+          <g transform="translate(130, 0)">
+            <!-- Star -->
+            <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7"
+                     fill="currentColor"/>
+            <!-- House silhouette with door + windows cut out -->
+            <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z
+                     M 110,195 L 110,168 L 130,168 L 130,195 Z
+                     M 86,158 L 86,176 L 102,176 L 102,158 Z
+                     M 138,158 L 138,176 L 154,176 L 154,158 Z"
+                  fill="currentColor" fill-rule="evenodd"/>
+            <!-- Three flag stripes inside the gable -->
+            <g fill="currentColor" opacity="0.65">
+              <rect x="108" y="124" width="24" height="2.8"/>
+              <rect x="106" y="130" width="28" height="2.8"/>
+              <rect x="104" y="136" width="32" height="2.8"/>
+            </g>
+          </g>
+          <!-- Wordmark -->
+          <text x="250" y="300" font-family="'IM Fell English', Georgia, serif" font-size="42" font-weight="400" fill="currentColor" text-anchor="middle" letter-spacing="2">AMERICAN DREAM</text>
+          <!-- Divider line -->
+          <line x1="160" y1="324" x2="340" y2="324" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <!-- Subline -->
+          <text x="250" y="362" font-family="'Libre Franklin', sans-serif" font-size="14" font-weight="500" fill="currentColor" text-anchor="middle" letter-spacing="6" opacity="0.9">REAL ESTATE LLC</text>
+          <!-- Tagline -->
+          <text x="250" y="408" font-family="'EB Garamond', Georgia, serif" font-size="15" font-style="italic" fill="currentColor" text-anchor="middle" opacity="0.78">Life · Liberty · The Pursuit of Home</text>
+        </svg>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+
+      <p class="copyright">
+        American Dream Real Estate LLC · Texas · TREC License #XXXXXX<br>
+        © 2026. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

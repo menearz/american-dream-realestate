@@ -1,0 +1,34 @@
+/* ============================================================
+   American Dream Real Estate LLC — Typography
+   Loads the three brand fonts from Google Fonts.
+   Import this AFTER brand.css.
+   ============================================================ */
+
+/* IM Fell English — display font, the "Declaration broadside" feel */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+/* EB Garamond — body font, classic readable serif */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+/* Libre Franklin — UI font, modern American grotesque */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   Optional: self-host fonts for production
+   ------------------------------------------------------------
+   For best performance + Cloudflare-friendliness, download the
+   font files from Google Fonts (or fonts.bunny.net for a
+   privacy-friendly mirror), drop them in /assets/fonts/, and
+   replace the @import calls above with @font-face declarations
+   like the example below. This eliminates the network round-trip
+   to Google and removes a third-party dependency.
+   ============================================================
+
+   @font-face {
+     font-family: 'IM Fell English';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: url('/assets/fonts/im-fell-english-regular.woff2') format('woff2');
+   }
+*/

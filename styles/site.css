@@ -1,0 +1,266 @@
+/* ============================================================
+   American Dream Real Estate LLC — Site chrome
+   Navbar, footer, grids, page-layout helpers shared by every
+   page. Imports nothing; depends on tokens declared in
+   american-dream-brand/styles/brand.css being loaded first.
+   ============================================================ */
+
+/* ---------- Navbar ---------- */
+
+.site-nav {
+  width: 100%;
+  z-index: 10;
+}
+
+.site-nav__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav__logo {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: none;
+  line-height: 0;
+}
+.site-nav__logo:hover { border-bottom: none; }
+.site-nav__logo svg { height: 56px; width: auto; display: block; }
+
+.site-nav__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-5);
+  align-items: center;
+}
+.site-nav__links a {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-bottom: none;
+}
+.site-nav__links a:hover { border-bottom: 1px solid currentColor; }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-md);
+  color: inherit;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Variant: over the dark flag hero */
+.site-nav--over-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--color-pure-white);
+}
+.site-nav--over-hero .site-nav__links a {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.site-nav--over-hero .site-nav__links a:hover { color: var(--color-pure-white); }
+
+/* Variant: solid bar on parchment for subpages */
+.site-nav--solid {
+  position: relative;
+  background: var(--color-parchment);
+  color: var(--color-flag-navy);
+  border-bottom: 1px solid var(--color-border);
+}
+.site-nav--solid .site-nav__links a { color: var(--color-flag-navy); }
+.site-nav--solid .site-nav__links a:hover { color: var(--color-flag-red); }
+
+@media (max-width: 768px) {
+  .site-nav__logo svg { height: 44px; }
+  .nav-toggle { display: inline-block; }
+  .site-nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-charcoal);
+    color: var(--color-pure-white);
+  }
+  .site-nav--solid .site-nav__links { background: var(--color-parchment-deep); }
+  .site-nav__links--open { display: flex; }
+  .site-nav__links a {
+    display: block;
+    padding: var(--space-2) 0;
+    width: 100%;
+  }
+  .site-nav--over-hero .site-nav__links a { color: var(--color-pure-white); text-shadow: none; }
+}
+
+/* ---------- Ghost button (missing from brand.css) ---------- */
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--color-pure-white);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.btn-ghost:hover {
+  background: var(--color-pure-white);
+  color: var(--color-flag-navy);
+  border-color: var(--color-pure-white);
+}
+
+/* ---------- Listings grid ---------- */
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--color-parchment-deep), var(--color-stone));
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-stone);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+/* ---------- Two-column layout ---------- */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; gap: var(--space-5); }
+}
+
+/* ---------- Page header (subpages without a hero) ---------- */
+
+.page-header {
+  background: var(--color-parchment);
+  padding: var(--space-7) 0 var(--space-6);
+  text-align: center;
+}
+.page-header .eyebrow { display: block; }
+
+/* ---------- About-page bits ---------- */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+.process-card {
+  background: var(--color-pure-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+}
+.process-card .step-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-flag-red);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.cta-strip {
+  background: var(--color-charcoal);
+  color: var(--color-pure-white);
+  padding: var(--space-7) 0;
+  text-align: center;
+}
+.cta-strip h2 { color: var(--color-pure-white); }
+.cta-strip p { color: rgba(255, 255, 255, 0.85); }
+
+/* ---------- Contact-page details ---------- */
+
+.contact-info {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+.contact-info p {
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  margin: var(--space-1) 0;
+}
+.contact-info a { color: var(--color-flag-navy); }
+
+/* ---------- Form rows (replaces inline margin-bottom on form divs) ---------- */
+
+.form-row { margin-bottom: var(--space-4); }
+.form-row--last { margin-bottom: var(--space-5); }
+
+/* ---------- Site footer ---------- */
+
+.site-footer {
+  background: var(--color-charcoal);
+  color: rgba(255, 255, 255, 0.75);
+  padding: var(--space-7) 0 var(--space-5);
+  text-align: center;
+}
+.site-footer .footer-logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+  color: var(--color-pure-white);
+}
+.site-footer .footer-logo svg { height: 180px; width: auto; display: block; }
+.site-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.site-footer a {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-ui);
+  font-size: var(--text-small);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border-bottom-color: transparent;
+}
+.site-footer a:hover { color: var(--color-pure-white); border-bottom-color: var(--color-pure-white); }
+.site-footer .copyright {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: var(--text-small);
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: var(--space-4);
+}
