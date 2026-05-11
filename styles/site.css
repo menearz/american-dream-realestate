@@ -346,47 +346,21 @@
   gap: var(--space-3);
 }
 
-.hero-photo__badge {
-  position: relative;
-  z-index: 2;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--space-4) var(--space-6);
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  color: var(--color-pure-white);
-}
-.hero-photo__badge img {
-  width: 120px;
-  height: 120px;
-  display: block;
-  background: var(--color-pure-white);
-  border: 2px double rgba(255, 255, 255, 0.9);
-  padding: 6px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-  border-radius: 50%;
-}
-.hero-photo__badge .tvc-caption {
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-}
-@media (max-width: 768px) {
-  .hero-photo__badge { flex-direction: column; align-items: flex-start; }
-  .hero-photo__badge img { width: 96px; height: 96px; }
-}
-
-/* ---------- TVC badge component (general use) ---------- */
+/* ---------- TVC badge sizing (two placements only: About + footer) ---------- */
 
 .tvc-badge {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
   display: block;
-  width: var(--tvc-size, 140px);
-  height: var(--tvc-size, 140px);
 }
-.tvc-badge--hero    { --tvc-size: 140px; }
-.tvc-badge--about   { --tvc-size: 200px; }
-.tvc-badge--footer  { --tvc-size: 80px; }
-.tvc-badge--sm      { --tvc-size: 96px; }
+
+.tvc-badge-footer {
+  max-width: 70px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 .tvc-caption {
   font-family: var(--font-ui);
@@ -451,7 +425,6 @@
   padding: var(--space-6);
   margin: var(--space-6) 0;
 }
-.veteran-about__badge img { width: 200px; height: 200px; display: block; }
 .veteran-about__meta {
   margin-top: var(--space-4);
   font-family: var(--font-ui);
@@ -465,7 +438,7 @@
 .veteran-about__meta strong { color: var(--color-text-strong); }
 @media (max-width: 768px) {
   .veteran-about { grid-template-columns: 1fr; text-align: center; }
-  .veteran-about__badge img { margin: 0 auto; width: 160px; height: 160px; }
+  .veteran-about__badge img { margin: 0 auto; }
 }
 
 /* ---------- Star list (★ bullets in gold) ---------- */
@@ -616,8 +589,6 @@
   margin: var(--space-5) auto var(--space-4);
 }
 .site-footer__tvc img {
-  width: 80px;
-  height: 80px;
   background: var(--color-pure-white);
   border-radius: 50%;
   padding: 4px;
