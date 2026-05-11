@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — American Dream Real Estate LLC</title>
-  <meta name="description" content="Get in touch with American Dream Real Estate. We'll write back the same day, in plain English.">
+  <meta name="description" content="Get in touch with American Dream Real Estate. Veteran-owned Texas investor. We respond within 24 hours, seven days a week.">
 
   <link rel="icon" type="image/svg+xml" href="american-dream-brand/assets/logo-mark.svg">
-  <link rel="canonical" href="https://americandreamrealestate.com/contact.html">
+  <link rel="canonical" href="https://the-american-dream.net/contact.html">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact — American Dream Real Estate LLC">
-  <meta property="og:description" content="Get in touch. We'll write back the same day, in plain English.">
-  <meta property="og:url" content="https://americandreamrealestate.com/contact.html">
-  <meta property="og:image" content="https://americandreamrealestate.com/american-dream-brand/assets/logo-mark.svg">
+  <meta property="og:description" content="Get in touch. We respond within 24 hours, seven days a week.">
+  <meta property="og:url" content="https://the-american-dream.net/contact.html">
+  <meta property="og:image" content="https://the-american-dream.net/american-dream-brand/assets/logo-mark.svg">
   <meta property="og:site_name" content="American Dream Real Estate">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -23,6 +23,8 @@
 </head>
 <body>
 
+  <div class="flag-top-band" aria-hidden="true"><span></span><span></span><span></span></div>
+
   <header>
     <nav class="site-nav site-nav--solid" aria-label="Primary">
       <div class="site-nav__inner">
@@ -30,13 +32,8 @@
           <svg viewBox="0 0 660 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Dream Real Estate LLC">
             <title>American Dream Real Estate LLC</title>
             <g transform="translate(-15, -25) scale(0.875)">
-              <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7"
-                       fill="currentColor"/>
-              <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z
-                       M 110,195 L 110,168 L 130,168 L 130,195 Z
-                       M 86,158 L 86,176 L 102,176 L 102,158 Z
-                       M 138,158 L 138,176 L 154,176 L 154,158 Z"
-                    fill="currentColor" fill-rule="evenodd"/>
+              <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7" fill="currentColor"/>
+              <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z M 110,195 L 110,168 L 130,168 L 130,195 Z M 86,158 L 86,176 L 102,176 L 102,158 Z M 138,158 L 138,176 L 154,176 L 154,158 Z" fill="currentColor" fill-rule="evenodd"/>
               <g fill="#B22234">
                 <rect x="108" y="124" width="24" height="2.8"/>
                 <rect x="106" y="130" width="28" height="2.8"/>
@@ -55,9 +52,12 @@
         </a>
         <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
         <ul id="primary-nav" class="site-nav__links">
-          <li><a href="listings.html">Listings</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="sellers.html">Sellers</a></li>
+          <li><a href="investors.html">Investors</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a class="site-nav__phone" href="tel:+13464236549">(346) 423-6549</a></li>
         </ul>
       </div>
     </nav>
@@ -69,7 +69,8 @@
         <p class="eyebrow text-center">Get in touch</p>
         <h1 class="text-center">Tell us what you're looking for.</h1>
         <p class="lede text-center" style="margin-bottom: var(--space-6);">
-          We'll write back the same day, in plain English, no auto-responder.
+          We'll write back the same day, in plain English. No auto-responder.<br>
+          <span style="font-family: var(--font-ui); font-size: var(--text-small); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-text-muted);">We respond within 24 hours, seven days a week.</span>
         </p>
 
         <form action="/api/contact" method="POST" novalidate>
@@ -91,9 +92,12 @@
             <input type="tel" id="phone" name="phone" autocomplete="tel">
           </div>
           <div class="form-row form-row--last">
-            <label for="message">What you're looking for</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="message">What you're looking for (include the property address if relevant)</label>
+            <textarea id="message" name="message" rows="7" required></textarea>
           </div>
+          <p style="font-family: var(--font-ui); font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: var(--space-4);">
+            By submitting this form, you consent to receive SMS, WhatsApp messages, emails, and phone calls from American Dream Real Estate LLC related to your inquiry. Reply STOP to opt out of text messages. See our <a href="privacy.html">privacy policy</a> for details.
+          </p>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Send message</button>
           </div>
@@ -101,27 +105,23 @@
 
         <div class="contact-info">
           <p class="eyebrow" style="color: var(--color-flag-navy);">Other ways to reach us</p>
-          <p>Phone · <a href="tel:+12815550100">(281) 555-0100</a> &nbsp;[update]</p>
-          <p>Email · <a href="mailto:hello@americandreamrealestate.com">hello@americandreamrealestate.com</a> &nbsp;[update]</p>
-          <p>Office · 123 Main Street, Houston, TX 77002 &nbsp;[update]</p>
+          <p>Phone · <a href="tel:+13464236549">(346) 423-6549</a></p>
+          <p>Email · <a href="mailto:americandreamtx93@gmail.com">americandreamtx93@gmail.com</a></p>
+          <p>Location · Humble, Texas · Serving the Republic of Texas, statewide</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="divider-flag-band site-footer__band" aria-hidden="true"></div>
     <div class="container">
       <div class="footer-logo">
         <svg viewBox="0 0 500 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Dream Real Estate LLC">
           <title>American Dream Real Estate LLC</title>
           <g transform="translate(130, 0)">
-            <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7"
-                     fill="currentColor"/>
-            <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z
-                     M 110,195 L 110,168 L 130,168 L 130,195 Z
-                     M 86,158 L 86,176 L 102,176 L 102,158 Z
-                     M 138,158 L 138,176 L 154,176 L 154,158 Z"
-                  fill="currentColor" fill-rule="evenodd"/>
+            <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7" fill="currentColor"/>
+            <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z M 110,195 L 110,168 L 130,168 L 130,195 Z M 86,158 L 86,176 L 102,176 L 102,158 Z M 138,158 L 138,176 L 154,176 L 154,158 Z" fill="currentColor" fill-rule="evenodd"/>
             <g fill="currentColor" opacity="0.65">
               <rect x="108" y="124" width="24" height="2.8"/>
               <rect x="106" y="130" width="28" height="2.8"/>
@@ -135,14 +135,30 @@
         </svg>
       </div>
 
+      <div class="site-footer__tvc">
+        <img src="assets/tvc-veteran-owned-badge.png" alt="Texas Veterans Commission Veteran-Owned Business badge">
+        <p class="tvc-caption">100% Veteran-Owned · Verified by the Texas Veterans Commission · VEP-044849</p>
+      </div>
+
       <ul class="footer-links">
-        <li><a href="listings.html">Listings</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="investors.html">Investors</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
       </ul>
 
+      <p style="font-family: var(--font-body); font-style: italic; color: rgba(255,255,255,0.7); margin-top: var(--space-3);">
+        Serving homeowners and investors across the Republic of Texas.
+      </p>
+      <p style="font-family: var(--font-ui); font-size: var(--text-small); letter-spacing: var(--tracking-wide); color: rgba(255,255,255,0.78); margin-top: var(--space-2);">
+        <a href="tel:+13464236549">(346) 423-6549</a> &nbsp;·&nbsp; <a href="mailto:americandreamtx93@gmail.com">americandreamtx93@gmail.com</a>
+      </p>
+
       <p class="copyright">
-        American Dream Real Estate LLC · Texas · TREC License #XXXXXX<br>
+        American Dream Real Estate LLC · Humble, Texas · 100% Veteran-Owned and Operated<br>
         © 2026. All rights reserved.
       </p>
     </div>

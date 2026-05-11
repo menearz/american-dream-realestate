@@ -15,6 +15,8 @@
 </head>
 <body>
 
+  <div class="flag-top-band" aria-hidden="true"><span></span><span></span><span></span></div>
+
   <header>
     <nav class="site-nav site-nav--solid" aria-label="Primary">
       <div class="site-nav__inner">
@@ -22,13 +24,8 @@
           <svg viewBox="0 0 660 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Dream Real Estate LLC">
             <title>American Dream Real Estate LLC</title>
             <g transform="translate(-15, -25) scale(0.875)">
-              <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7"
-                       fill="currentColor"/>
-              <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z
-                       M 110,195 L 110,168 L 130,168 L 130,195 Z
-                       M 86,158 L 86,176 L 102,176 L 102,158 Z
-                       M 138,158 L 138,176 L 154,176 L 154,158 Z"
-                    fill="currentColor" fill-rule="evenodd"/>
+              <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7" fill="currentColor"/>
+              <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z M 110,195 L 110,168 L 130,168 L 130,195 Z M 86,158 L 86,176 L 102,176 L 102,158 Z M 138,158 L 138,176 L 154,176 L 154,158 Z" fill="currentColor" fill-rule="evenodd"/>
               <g fill="#B22234">
                 <rect x="108" y="124" width="24" height="2.8"/>
                 <rect x="106" y="130" width="28" height="2.8"/>
@@ -47,9 +44,12 @@
         </a>
         <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false">Menu</button>
         <ul id="primary-nav" class="site-nav__links">
-          <li><a href="listings.html">Listings</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="sellers.html">Sellers</a></li>
+          <li><a href="investors.html">Investors</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a class="site-nav__phone" href="tel:+13464236549">(346) 423-6549</a></li>
         </ul>
       </div>
     </nav>
@@ -61,11 +61,10 @@
         <p class="eyebrow">Message received</p>
         <h1>Thank you.</h1>
         <p class="lede" style="margin-bottom: var(--space-6);">
-          We've got your note and we'll write back the same day. In the meantime,
-          look around.
+          We've got your note and we'll write back the same day. In the meantime, look around.
         </p>
         <p>
-          <a href="listings.html" class="btn btn-primary" style="margin-right: var(--space-2);">See current listings</a>
+          <a href="about.html" class="btn btn-primary" style="margin-right: var(--space-2);">Read about how we work</a>
           <a href="/" class="btn btn-secondary">Back to home</a>
         </p>
       </div>
@@ -73,18 +72,14 @@
   </main>
 
   <footer class="site-footer">
+    <div class="divider-flag-band site-footer__band" aria-hidden="true"></div>
     <div class="container">
       <div class="footer-logo">
         <svg viewBox="0 0 500 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Dream Real Estate LLC">
           <title>American Dream Real Estate LLC</title>
           <g transform="translate(130, 0)">
-            <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7"
-                     fill="currentColor"/>
-            <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z
-                     M 110,195 L 110,168 L 130,168 L 130,195 Z
-                     M 86,158 L 86,176 L 102,176 L 102,158 Z
-                     M 138,158 L 138,176 L 154,176 L 154,158 Z"
-                  fill="currentColor" fill-rule="evenodd"/>
+            <polygon points="120,48 125.3,62.7 140.9,63.2 128.6,72.8 132.9,87.8 120,79 107.1,87.8 111.4,72.8 99.1,63.2 114.7,62.7" fill="currentColor"/>
+            <path d="M 75,195 L 75,145 L 120,108 L 165,145 L 165,195 Z M 110,195 L 110,168 L 130,168 L 130,195 Z M 86,158 L 86,176 L 102,176 L 102,158 Z M 138,158 L 138,176 L 154,176 L 154,158 Z" fill="currentColor" fill-rule="evenodd"/>
             <g fill="currentColor" opacity="0.65">
               <rect x="108" y="124" width="24" height="2.8"/>
               <rect x="106" y="130" width="28" height="2.8"/>
@@ -98,14 +93,30 @@
         </svg>
       </div>
 
+      <div class="site-footer__tvc">
+        <img src="assets/tvc-veteran-owned-badge.png" alt="Texas Veterans Commission Veteran-Owned Business badge">
+        <p class="tvc-caption">100% Veteran-Owned · Verified by the Texas Veterans Commission · VEP-044849</p>
+      </div>
+
       <ul class="footer-links">
-        <li><a href="listings.html">Listings</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="investors.html">Investors</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
       </ul>
 
+      <p style="font-family: var(--font-body); font-style: italic; color: rgba(255,255,255,0.7); margin-top: var(--space-3);">
+        Serving homeowners and investors across the Republic of Texas.
+      </p>
+      <p style="font-family: var(--font-ui); font-size: var(--text-small); letter-spacing: var(--tracking-wide); color: rgba(255,255,255,0.78); margin-top: var(--space-2);">
+        <a href="tel:+13464236549">(346) 423-6549</a> &nbsp;·&nbsp; <a href="mailto:americandreamtx93@gmail.com">americandreamtx93@gmail.com</a>
+      </p>
+
       <p class="copyright">
-        American Dream Real Estate LLC · Texas · TREC License #XXXXXX<br>
+        American Dream Real Estate LLC · Humble, Texas · 100% Veteran-Owned and Operated<br>
         © 2026. All rights reserved.
       </p>
     </div>

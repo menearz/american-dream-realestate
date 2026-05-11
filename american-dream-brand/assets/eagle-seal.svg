@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="American Dream Real Estate seal — eagle with shield">
+  <title>American Dream Real Estate Seal</title>
+  <defs>
+    <style>
+      .ink   { fill: none; stroke: #3C3B6E; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+      .ink-thick { fill: none; stroke: #3C3B6E; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+      .navy  { fill: #3C3B6E; }
+      .red   { fill: #B22234; }
+      .gold  { fill: #C9A961; }
+      .white { fill: #FFFFFF; }
+    </style>
+  </defs>
+
+  <!-- Outer decorative rings -->
+  <circle cx="60" cy="60" r="58" class="ink" />
+  <circle cx="60" cy="60" r="55" class="ink" />
+
+  <!-- Top star ornament -->
+  <polygon class="gold"
+    points="60,8 61.4,12.3 65.9,12.3 62.2,14.9 63.6,19.2 60,16.6 56.4,19.2 57.8,14.9 54.1,12.3 58.6,12.3" />
+
+  <!-- Decorative inner ring stars at 4, 6, 8 o'clock -->
+  <circle cx="22" cy="60" r="1.4" class="navy" />
+  <circle cx="98" cy="60" r="1.4" class="navy" />
+
+  <!-- Eagle: head and beak -->
+  <path class="ink-thick"
+    d="M 60 26
+       C 56 26, 53 28, 52 31
+       C 51 33, 51 35, 52 37
+       C 53 39, 55 40, 57 40
+       L 51 42
+       L 56 43" />
+  <!-- Eagle eye -->
+  <circle cx="55" cy="32" r="0.9" class="navy" />
+
+  <!-- Eagle spread wings (stylized arches) -->
+  <path class="ink-thick"
+    d="M 57 40
+       C 47 41, 38 46, 30 54
+       C 28 56, 27 58, 27 60
+       M 30 54
+       C 33 53, 36 53, 39 54
+       M 36 56
+       C 39 55, 42 56, 45 58
+       M 41 58
+       C 44 57, 47 58, 50 60" />
+  <path class="ink-thick"
+    d="M 63 40
+       C 73 41, 82 46, 90 54
+       C 92 56, 93 58, 93 60
+       M 90 54
+       C 87 53, 84 53, 81 54
+       M 84 56
+       C 81 55, 78 56, 75 58
+       M 79 58
+       C 76 57, 73 58, 70 60" />
+
+  <!-- Wing feather tips -->
+  <path class="ink"
+    d="M 30 60 L 28 64 M 35 60 L 33 65 M 40 60 L 38 65 M 45 60 L 43 65 M 50 60 L 48 65" />
+  <path class="ink"
+    d="M 90 60 L 92 64 M 85 60 L 87 65 M 80 60 L 82 65 M 75 60 L 77 65 M 70 60 L 72 65" />
+
+  <!-- Eagle body framing the shield -->
+  <path class="ink-thick"
+    d="M 51 44
+       C 50 50, 50 56, 50 62
+       L 51 78
+       C 53 82, 56 84, 60 84
+       C 64 84, 67 82, 69 78
+       L 70 62
+       C 70 56, 70 50, 69 44" />
+
+  <!-- Shield on chest -->
+  <path class="navy" d="M 52 50 L 68 50 L 68 64 C 68 70, 64 74, 60 77 C 56 74, 52 70, 52 64 Z" />
+  <!-- Shield canton (navy stays) and stripes -->
+  <rect x="52" y="50" width="16" height="4" class="navy" />
+  <!-- Three white stars in canton -->
+  <circle cx="56" cy="52" r="0.6" class="white" />
+  <circle cx="60" cy="52" r="0.6" class="white" />
+  <circle cx="64" cy="52" r="0.6" class="white" />
+  <!-- Red and white stripes below canton -->
+  <rect x="52" y="54" width="16" height="2" class="red" />
+  <rect x="52" y="56" width="16" height="2" class="white" />
+  <rect x="52" y="58" width="16" height="2" class="red" />
+  <rect x="52" y="60" width="16" height="2" class="white" />
+  <!-- Lower curved stripes -->
+  <path class="red" d="M 52 62 L 68 62 L 68 64 C 68 66, 67 67.5, 66 68.5 L 54 68.5 C 53 67.5, 52 66, 52 64 Z" />
+  <path class="white" d="M 54 68.5 L 66 68.5 C 65 70, 63 72, 60 74 C 57 72, 55 70, 54 68.5 Z" />
+
+  <!-- Olive branch (left talon) -->
+  <path class="ink"
+    d="M 50 84 C 44 86, 38 88, 33 92" />
+  <ellipse cx="40" cy="89" rx="2" ry="0.9" class="gold" transform="rotate(-20 40 89)" />
+  <ellipse cx="36" cy="91" rx="2" ry="0.9" class="gold" transform="rotate(-15 36 91)" />
+  <ellipse cx="44" cy="87" rx="2" ry="0.9" class="gold" transform="rotate(-25 44 87)" />
+
+  <!-- Arrows (right talon) -->
+  <line x1="70" y1="84" x2="86" y2="92" class="ink" />
+  <line x1="70" y1="85" x2="87" y2="91" class="ink" />
+  <line x1="70" y1="86" x2="88" y2="90" class="ink" />
+  <polygon class="navy" points="86,92 89,91 87,94" />
+  <polygon class="navy" points="87,91 90,90 88,93" />
+  <polygon class="navy" points="88,90 91,89 89,92" />
+  <line x1="68" y1="83" x2="68" y2="80" class="ink" />
+  <line x1="68" y1="80" x2="70" y2="80" class="ink" />
+  <line x1="68" y1="80" x2="66" y2="80" class="ink" />
+
+  <!-- Banner beneath -->
+  <path class="ink-thick" d="M 36 100 Q 60 108 84 100" />
+  <path class="ink" d="M 36 100 L 32 104 L 38 102 Z M 84 100 L 88 104 L 82 102 Z" />
+  <text x="60" y="105" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-size="5.5" fill="#3C3B6E" letter-spacing="1.4">E PLURIBUS UNUM</text>
+</svg>

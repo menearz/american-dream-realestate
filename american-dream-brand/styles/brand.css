@@ -18,6 +18,15 @@
 
   /* ---------- Color: Accent ---------- */
   --color-gold: #C9A961;
+  --color-sepia: #5C4A32;
+
+  /* ---------- Color: Spec aliases (v3.1) ---------- */
+  --color-navy: var(--color-flag-navy);
+  --color-red: var(--color-flag-red);
+  --color-cream: var(--color-parchment);
+  --color-cream-aged: var(--color-parchment-deep);
+  --color-ink: var(--color-charcoal);
+  --color-white: var(--color-pure-white);
 
   /* ---------- Color: Semantic ---------- */
   --color-bg: var(--color-parchment);
@@ -285,48 +294,6 @@ a:hover {
 .btn-accent:hover {
   background: #951C2C;
   border-color: #951C2C;
-}
-
-/* ============================================================
-   Cards (e.g., property cards)
-   ============================================================ */
-
-.card {
-  background: var(--color-surface);
-  border-top: 4px solid var(--color-flag-navy);
-  border-radius: var(--radius-md);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-card);
-  transition: box-shadow var(--duration-base) var(--ease-out),
-              transform var(--duration-base) var(--ease-out);
-}
-.card:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-2px);
-}
-
-.card .card-price {
-  font-family: var(--font-ui);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-flag-navy);
-  letter-spacing: var(--tracking-wide);
-}
-
-.card .card-address {
-  font-family: var(--font-display);
-  font-size: var(--text-h3);
-  color: var(--color-text-strong);
-  margin: var(--space-2) 0;
-  line-height: var(--leading-snug);
-}
-
-.card .card-meta {
-  font-family: var(--font-ui);
-  font-size: var(--text-small);
-  color: var(--color-text-muted);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
 }
 
 /* ============================================================

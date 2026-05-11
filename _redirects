@@ -1,1 +1,4 @@
-/home  /  301
+/home              /              301
+/listings          /sellers.html  301
+/listings.html     /sellers.html  301
+/listings/*        /sellers.html  301
