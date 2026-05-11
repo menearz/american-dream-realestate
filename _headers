@@ -5,13 +5,16 @@
   Permissions-Policy: geolocation=(), camera=(), microphone=()
 
 /styles/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 /american-dream-brand/styles/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 /american-dream-brand/assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=86400, must-revalidate
 
 /*.html
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: public, max-age=60, must-revalidate
