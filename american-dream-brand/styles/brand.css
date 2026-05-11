@@ -297,6 +297,26 @@ a:hover {
 }
 
 /* ============================================================
+   TVC badge sizing (forced — image appears in 2 places only:
+   About verified-by section and footer of every page)
+   ============================================================ */
+
+.tvc-badge {
+  max-width: 180px !important;
+  width: 180px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto;
+}
+
+.tvc-badge-footer {
+  max-width: 70px !important;
+  width: 70px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* ============================================================
    Forms
    ============================================================ */
 
